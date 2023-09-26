@@ -1,0 +1,71 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+section{
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+
+}
+
+.myImageFruit{
+    min-height: 100%;
+}
+
+#myDivImage{
+    min-height: 100%;
+}
+
+#myDivForm{
+    /* margin: 20px 20px  0px 15px ; */
+    padding: 20px;
+    background-color: rgb(222, 220, 218);
+
+    
+   
+}
+
+.category, .myButton{
+    margin-top: 20px;
+}
+
+
+#messageErrorName, #messageErrorCategory, #messageErrorImage, #messageErrorPrice{
+    color: red;
+    margin-top: 10px;
+}
+
+
+h1 {
+    color: rgb(153, 88, 88);
+    font-size: 40px;
+}
+
+
+
+.form-label{
+    color: rgb(153, 88, 88);
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.table{
+    color: rgb(153, 88, 88);
+    --bs-table-color:  rgb(153, 88, 88)var(--bs-emphasis-color);
+    --bs-table-striped-color:  rgb(153, 88, 88)var(--bs-emphasis-color);
+    --bs-table-active-color:  rgb(153, 88, 88)var(--bs-emphasis-color);
+    --bs-table-hover-color: rgb(153, 88, 88)var(--bs-emphasis-color);
+    
+
+}
+
+
+
+
