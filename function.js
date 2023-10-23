@@ -1,5 +1,9 @@
+let arr=[]
+
 
 loadProduct()
+
+
 function addProduct(){
     const productName= document.getElementById("productName").value
     const productPrice= document.getElementById("productPrice").value
@@ -15,6 +19,8 @@ function addProduct(){
         productCategory: productCategory,
         productImage: productImage
     }
+    
+     arr.push(product) // organize in a list 
 
     document.getElementById("messageErrorName").innerHTML=""
     document.getElementById("messageErrorPrice").innerHTML=""
@@ -24,6 +30,7 @@ function addProduct(){
     if (!productName){
         event.preventDefault()
         document.getElementById("productName").focus()
+     
         document.getElementById("messageErrorName").innerHTML=" * Missing product name *"
         return
 
@@ -80,9 +87,6 @@ function addProduct(){
 
 
 
-
-
-
     let i=1
     let html = ` <tr>
                     <td> ${productName}</td>
@@ -96,21 +100,87 @@ function addProduct(){
     productTable.innerHTML+= html
 
 
+
+
+    
+
+    etoile()
+
+    setTimeout(()=>{
+        document.getElementById("etoile").innerHTML=""
+    },2200)
+
   
     }
 
-
-
-
-
-function saveProduct(){
-    localStorage.removeItem("productTable")
-    const productTable= document.getElementById("productTable").innerHTML
-    localStorage.setItem("productTable", productTable)
     
-    loadProduct()
+
+
+
+
+
+
+// function saveProduct(){
+//     localStorage.removeItem("productTable")
+//     const productTable= document.getElementById("productTable").innerHTML
+//     if(productTable ===""){
+//         localStorage.setItem("productTable", productTable)
+//         icon()
+
+//         console.log(productTable)
+//         setTimeout(()=>{
+//             document.getElementById("icon").innerHTML=""
+//         },2200)
+        
+
+//     }
+//     else{
+//         document.getElementById("icon").innerHTML="* The table is empty *"
+//         setTimeout(()=>{
+//             document.getElementById("icon").innerHTML=""
+//         },2200)
+        
+
+//     }
     
+    
+//     loadProduct()
+   
+// }
+
+
+function saveProduct() {
+    
+    
+    const productTableBody = document.getElementById("productTable");
+    const rows = productTableBody.getElementsByTagName("tr");
+
+    
+    if (rows.length > 0) {
+
+        localStorage.removeItem("productTable");
+        const productTableHTML = productTableBody.innerHTML;
+        localStorage.setItem("productTable", productTableHTML);
+        icon();
+
+        setTimeout(() => {
+            document.getElementById("icon").innerHTML = "";
+        }, 2200);
+    } else {
+        document.getElementById("tableEmpty").innerHTML = "* the table is empty *";
+        setTimeout(() => {
+            document.getElementById("tableEmpty").innerHTML = "";
+        }, 2200);
+    }
+
+    // loadProduct();
 }
+
+
+
+
+
+
 
 function loadProduct(){
 
@@ -121,3 +191,15 @@ function loadProduct(){
 
     }
 }
+
+function icon(){
+    document.getElementById("icon").innerHTML= `<img class="myIcon" style="height:40px; width:40px" src=assets/images/saveGif.gif>`
+
+}
+
+
+function etoile(){
+    document.getElementById("etoile").innerHTML= `<img class="myEtoile" style="height:35px; width:35px; " src=assets/images/icons8-star.gif>`
+
+}
+

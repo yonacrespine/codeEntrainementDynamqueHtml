@@ -8,30 +8,35 @@
     <script defer src="function.js"></script>
     <link rel="stylesheet" href="styles.css">
 
-    <title>Document</title>
+    <title>Course Online</title>
 </head>
 <body>
-    <section>
+    <section >
+        <div id="main">
+            <div  id="myDivImage" class="col-5 col-lg">
+              <img class=" img-fluid myImageFruit" src="assets/images/cadi.jpg" alt="fruits">
+            
+
+            </div>
+         
         
-        <div  id="myDivImage" class="col-5">
-        <img class=" img-fluid myImageFruit" src="assets/images/fruit.jpg" alt="fruits">
-        </div>
 
-        <div id="myDivForm" class="col-7">
-            <h1> My Course Online</h1>
-            <div class="col-6">
-            <label for="productName" class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Enter your product food name" id="productName">
-            <p id="messageErrorName"> </p>
-            </div>
+            <div id="myDivForm" class="col-7">
+              <h1> My Course Online</h1>
 
-            <div class="col-6">
-            <label for="productPrice" class="form-label"></label>
-            <input type="number" class="form-control"  placeholder="Enter the price of the product" id="productPrice">
-            <p id="messageErrorPrice"></p>
-            </div>
+              <div class="col-6">
+                <label for="productName" class="form-label"></label>
+                <input type="text" class="form-control" placeholder="Enter your product food name" id="productName">
+                <p id="messageErrorName"> </p>
+              </div>
 
-            <div class="col-md-4 category">
+              <div class="col-6">
+                <label for="productPrice" class="form-label"></label>
+                <input type="number" class="form-control"  placeholder="Enter the price of the product" id="productPrice">
+                <p id="messageErrorPrice"></p>
+              </div>
+
+              <div class="col-md-4 category">
                 <label for="productCategory" class="form-label" >Categories</label>
                 <select id="productCategory" class="form-select" required>
                   <option selected >Choose...</option>
@@ -47,17 +52,28 @@
                 <p id="messageErrorCategory"></p>
               </div>
 
-            <div class="col-6">
-            <label for="productImage" class="form-label"></label>
-            <input type="text" class="form-control"  placeholder="Enter an url of your product image" id="productImage">
-            <p id="messageErrorImage"></p>
+              <div class="col-6">
+                <label for="productImage" class="form-label"></label>
+                <input type="text" class="form-control"  placeholder="Enter an url of your product image" id="productImage">
+                <p id="messageErrorImage"></p>
+              </div>
+
+            <div id="myDivButton">
+              <button class="myButton btn btn-outline-secondary" onclick="addProduct()"> Add Product</button>
+              <div id="myDivEtoile">
+                <span id="etoile"></span>
+              </div>
+              <button class="myButton btn btn-outline-secondary" onclick="saveProduct()"> Save Product</button>
+              <span id="icon"></span>
+              <span id="tableEmpty"></span>
+
             </div>
 
-            <button class="myButton btn btn-outline-secondary" onclick="addProduct()"> Add Product</button>
-            <button class="myButton btn btn-outline-secondary" onclick="saveProduct()"> Save Product</button>
+          </div>
+        </div>
 
 
-            <br><br><br>
+        <br>
 
 
 
@@ -79,9 +95,7 @@
 
                 </thead>
 
-                <tbody id="productTable">
-
-                </tbody>
+                <tbody id="productTable"></tbody>
 
 
 
@@ -91,6 +105,8 @@
         </div>
 
     </section>
+
+   
     
 </body>
 </html>
